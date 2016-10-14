@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Button } from 'react-bootstrap';
+import GameRow from './GameRow';
 
 class GameTable extends Component { 
 
@@ -7,25 +8,21 @@ class GameTable extends Component {
         super(props);
     }
 
-    handleAcceptGameClick(test) {
-        console.log(test);
-    }
-
     getScheduledGames() {
         var availableGames = this.props.availableGames;
         var rows = [];
         rows = availableGames.map(function(gameInfo, key) {
-            return (    
-                <tr key={key}>
-                    <td>{gameInfo.gamertag}</td>
-                    <td>{gameInfo.time}</td>
-                    <td>{gameInfo.game}</td>
-                    <td>{gameInfo.gameType}</td>
-                    <td>{gameInfo.playerCount}</td>
-                    <td><Button bsStyle='primary' onClick={this.handleAcceptGameClick.bind(this)}> Accept </Button></td>
-                </tr>
+            return (
+                <GameRow
+                    key={key}
+                    gamertag={gameInfo.gamertag}
+                    time={gameInfo.time}
+                    game={gameInfo.game}
+                    gameType={gameInfo.gameType}
+                    playerCount={gameInfo.playerCount}
+                />
             );
-        }, this);
+        });
 
         return rows;
     }

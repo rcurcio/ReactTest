@@ -26,7 +26,6 @@ class Home extends Component {
                 gameType: "Hardpoint",
                 playerCount: "5/8"
             };
-            console.log(typeof gameTime);
             gameDetails.time = gameTime;
             availableGames.push(gameDetails);
         }
