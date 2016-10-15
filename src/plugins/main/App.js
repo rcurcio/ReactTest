@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Mast from './Mast.js';
-import '../css/App.css';
+import Footer from './Footer.js';
+import '../../css/App.css';
 
 class App extends Component {
   render() {
     return (
-        <div className='row'>
+        <div className='row' style={{width: '100%'}}>
             <Mast />
             <div className='row'>
                 <div className='col-lg-1 col-xs-1'></div>
@@ -14,6 +15,7 @@ class App extends Component {
                 </div>
                 <div className='col-lg-1 col-xs-1'></div>
             </div>
+            <Footer/>
         </div>
     );
   }

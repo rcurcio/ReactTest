@@ -14,7 +14,7 @@ class GameRow extends Component {
         };
     }
 
-    handleAcceptGameClick() {
+    handleAcceptGameClick = () => {
         console.log('Game Accepted');
     }
 
@@ -26,7 +26,7 @@ class GameRow extends Component {
                 <td>{this.state.game}</td>
                 <td>{this.state.gameType}</td>
                 <td>{this.state.playerCount}</td>
-                <td><Button bsStyle='primary' onClick={this.handleAcceptGameClick.bind(this)}> Accept </Button></td>
+                <td><Button bsStyle='primary' onClick={this.handleAcceptGameClick}> Accept </Button></td>
             </tr>
 
     

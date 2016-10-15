@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router';
-import Login from '../plugins/user/Login'
+import Login from '../user/Login'
+import Register from '../user/Register'
 
 class Mast extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            showLogin: false
+            showLogin: false,
+            showRegister: false,
         };
     }
 
-    openLogin() {
-        this.setState({showLogin: true});
-        console.log(this.state.showLogin);
+    toggleLogin = () => {
+        this.setState({showLogin: !this.state.showLogin});
     }
 
-    closeLogin() {
-        this.setState({showLogin: false});
+    toggleRegister = () => {
+        this.setState({showRegister: !this.state.showRegister});
     }
 
     render() {
         return (
-            <Navbar inverse>
+            <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
                         <Link to='/'> PlaceHolder Title </Link>
@@ -37,11 +38,11 @@ class Mast extends Component {
                         </NavDropdown>
                     </Nav>
                     <Nav pullRight>
-                        <NavItem eventKey={1} onClick={this.openLogin.bind(this)}> Login
-                            <Login show={this.state.showLogin} onClose={this.closeLogin.bind(this)}/>
+                        <NavItem eventKey={1} onClick={this.toggleLogin}> Login
+                            <Login show={this.state.showLogin} onClose={this.toggleLogin}/>
                         </NavItem>
-                        <NavItem eventKey={2}>
-                            <Link to='register'>Register</Link>
+                        <NavItem eventKey={2} onClick={this.toggleRegister}> Register
+                            <Register show={this.state.showRegister} onClose={this.toggleRegister}/>
                         </NavItem>
                     </Nav>
                 </Navbar.Collapse>

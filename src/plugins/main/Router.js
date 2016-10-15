@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
 import App from './App';
-import Login from '../plugins/user/Login';
-import Home from '../plugins/main/Home';
-import Register from '../plugins/user/Register';
+import Login from '../user/Login';
+import Home from '../main/Home';
+import Register from '../user/Register';
 
 class router extends Component {
     render() {

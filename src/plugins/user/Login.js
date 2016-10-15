@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { FormControl, Button, Modal } from 'react-bootstrap';
-import Register from './Register';
-
 
 class Login extends Component {
     constructor(props) {
