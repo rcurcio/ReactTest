@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FormControl, Button, Modal } from 'react-bootstrap';
-var Client = require('node-rest-client').Client;
 
 class Login extends Component {
     constructor(props) {
@@ -11,12 +10,6 @@ class Login extends Component {
     }
 
     render() {
-        var client = new Client();
-        client.get('http://localhost:3001/login', function(data, response) {
-            console.log(data);
-            console.log(response);
-        });
-
         return (
             <div>
                 <Modal show={this.props.show} onHide={this.props.onClose}>

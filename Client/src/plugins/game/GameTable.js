@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { FormControl, Button, Modal } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
-var request = require('superagent');
 
 import {
     getMatches,
@@ -51,14 +50,6 @@ class GameTable extends Component {
         };
 
         gameDetails.time = gameTime;
-
-
-        request.post('http://localhost:3001/games')
-            .set('Content-Type', 'application/json')
-            .send(gameDetails)
-            .end(function(err, res) {
-                console.log(res.text);   
-            });
 
         this.props.addMatch(gameDetails);
         this.props.getMatches();

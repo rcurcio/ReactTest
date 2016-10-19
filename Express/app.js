@@ -33,7 +33,7 @@ app.get('/login', function (req, res) {
 app.post('/games', function (req, res) {
     var connection = null;
     var data = null;
-    console.log('Req: ', req);
+
     r.connect( {host: 'localhost', port: 28016}, function(err, conn) {
         if (err) throw err;
 

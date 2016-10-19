@@ -1,4 +1,5 @@
 import { registerReducer } from '../utils/DuxUtils';
+var restUtils = require('superagent');
 
 // General purpose store.
 // TODO look into 3REE Stack ( React + Redux RethinkDB + Express.js)
@@ -6,9 +7,22 @@ import { registerReducer } from '../utils/DuxUtils';
 // Normally we would grab/ store this data through our backend and b/w a REST/GraphQL layer.
 
 const matches = [];
+const expressPort = 3001;
+const expressServer = 'localhost:' + expressPort;
 
 const getMatchData = () => {
     return JSON.parse(JSON.stringify(matches));
+}
+
+const insertMatch = (matchPayload) => {
+    restUtils
+        .post(expressServer + '/games')
+        .set(matchPayload)
+        .end(function(err, res) {
+            if (!err) {
+                return JSON.parse(res.text);
+            }
+        });
 }
 
 export const getMatches = () => {
@@ -22,7 +36,8 @@ export const getMatches = () => {
 export const addMatch = (matchPayload) => {
     return {
         type: 'ADD_MATCH',
-        matchPayload,
+        data: insertMatch(matchPayload),
+        //matchPayload,
         completed: false,
     }
 };
