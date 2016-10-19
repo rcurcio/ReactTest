@@ -1,0 +1,56 @@
+2016-10-15T15:44:11.381218291 0.098263s notice: Recursively removing directory /home/ryan/Documents/Programming/Web/React/src/plugins/main/rethinkdb_data/tmp
+2016-10-15T15:44:11.386957312 0.104001s notice: Initializing directory /home/ryan/Documents/Programming/Web/React/src/plugins/main/rethinkdb_data
+2016-10-15T15:44:11.387041532 0.104085s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/ryan/Documents/Programming/Web/React/src/plugins/main/rethinkdb_data' did not already exist or is empty.)
+2016-10-15T15:44:11.387052079 0.104096s notice: Running rethinkdb 2.3.5~0wily (GCC 5.2.1)...
+2016-10-15T15:44:11.389195578 0.106241s notice: Running on Linux 4.2.0-34-generic x86_64
+2016-10-15T15:44:11.389236487 0.106280s notice: Loading data from directory /home/ryan/Documents/Programming/Web/React/src/plugins/main/rethinkdb_data
+2016-10-15T15:44:11.413683812 0.130728s info: Automatically using cache size of 2048 MB
+2016-10-15T15:44:11.414034175 0.131078s error: TCP socket creation failed for port 29015: Address already in use.
+2016-10-15T15:44:44.905343712 0.066403s notice: Running rethinkdb 2.3.5~0wily (GCC 5.2.1)...
+2016-10-15T15:44:44.907840128 0.068902s notice: Running on Linux 4.2.0-34-generic x86_64
+2016-10-15T15:44:44.907893663 0.068953s notice: Loading data from directory /home/ryan/Documents/Programming/Web/React/src/plugins/main/rethinkdb_data
+2016-10-15T15:44:44.920326657 0.081386s info: Automatically using cache size of 2039 MB
+2016-10-15T15:44:44.920807741 0.081867s notice: Listening for intracluster connections on port 29016
+2016-10-15T15:44:44.921425090 0.082485s notice: Listening for client driver connections on port 28016
+2016-10-15T15:44:44.921518192 0.082578s notice: Listening for administrative HTTP connections on port 8081
+2016-10-15T15:44:44.921519528 0.082579s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-10-15T15:44:44.921521276 0.082581s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-10-15T15:44:44.921522512 0.082582s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-10-15T15:44:44.921524088 0.082584s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-10-15T15:44:44.921525785 0.082585s notice: Server ready, "ryan_Linux_17a" 0aa69b9d-45f3-470f-91eb-229ba2fd4882
+2016-10-15T15:45:19.477879000 34.638939s warn: Received invalid clustering header from 127.0.0.1:44788, closing connection -- something might be connecting to the wrong port.
+2016-10-15T15:46:04.002618328 79.163678s info: Table 59bc517c-47f4-4924-bb21-c87e00874827: Starting a new Raft election for term 1.
+2016-10-15T15:46:04.002794717 79.163854s info: Table 59bc517c-47f4-4924-bb21-c87e00874827: Added replica on this server.
+2016-10-15T15:46:04.005061379 79.166121s info: Table 59bc517c-47f4-4924-bb21-c87e00874827: This server is Raft leader for term 1. Latest log index is 0.
+2016-10-15T16:27:26.012617121 2561.173677s info: Table 59bc517c-47f4-4924-bb21-c87e00874827: Configuration is changing.
+2016-10-15T16:27:29.355980986 2564.517041s info: Table 59bc517c-47f4-4924-bb21-c87e00874827: Configuration is changing.
+2016-10-15T23:34:48.563989214 28203.725049s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2016-10-15T23:34:48.564062460 28203.725122s notice: Shutting down client connections...
+2016-10-15T23:34:48.564155136 28203.725215s notice: All client connections closed.
+2016-10-15T23:34:48.564157050 28203.725217s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-10-15T23:34:48.566260213 28203.727320s notice: Storage engine shut down.
+2016-10-15T23:34:55.285512693 0.089854s notice: Running rethinkdb 2.3.5~0wily (GCC 5.2.1)...
+2016-10-15T23:34:55.287877628 0.092220s notice: Running on Linux 4.2.0-34-generic x86_64
+2016-10-15T23:34:55.287942342 0.092283s notice: Loading data from directory /home/ryan/Documents/Programming/Web/React/src/plugins/main/rethinkdb_data
+2016-10-15T23:34:55.299874458 0.104216s info: Automatically using cache size of 1883 MB
+2016-10-15T23:34:55.300244134 0.104585s error: TCP socket creation failed for port 29015: Address already in use.
+2016-10-15T23:35:53.646548124 0.069857s notice: Running rethinkdb 2.3.5~0wily (GCC 5.2.1)...
+2016-10-15T23:35:53.648889048 0.072199s notice: Running on Linux 4.2.0-34-generic x86_64
+2016-10-15T23:35:53.648933277 0.072242s notice: Loading data from directory /home/ryan/Documents/Programming/Web/React/src/plugins/main/rethinkdb_data
+2016-10-15T23:35:53.661698023 0.085006s info: Automatically using cache size of 1921 MB
+2016-10-15T23:35:53.662055933 0.085364s notice: Listening for intracluster connections on port 29016
+2016-10-15T23:35:53.667695299 0.091004s notice: Listening for client driver connections on port 28016
+2016-10-15T23:35:53.667988668 0.091297s notice: Listening for administrative HTTP connections on port 8081
+2016-10-15T23:35:53.667990052 0.091298s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-10-15T23:35:53.667992154 0.091300s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-10-15T23:35:53.667993611 0.091302s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-10-15T23:35:53.668000679 0.091309s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-10-15T23:35:53.668002336 0.091311s notice: Server ready, "ryan_Linux_17a" 0aa69b9d-45f3-470f-91eb-229ba2fd4882
+2016-10-15T23:35:55.182663632 1.605972s info: Table 59bc517c-47f4-4924-bb21-c87e00874827: Starting a new Raft election for term 2.
+2016-10-15T23:35:55.185615769 1.608924s info: Table 59bc517c-47f4-4924-bb21-c87e00874827: This server is Raft leader for term 2. Latest log index is 4.
+2016-10-15T23:45:08.806732476 555.230041s info: Table d6e3ffb7-7c02-44e9-bdd7-3977b584b35b: Starting a new Raft election for term 1.
+2016-10-15T23:45:08.806888957 555.230197s info: Table d6e3ffb7-7c02-44e9-bdd7-3977b584b35b: Added replica on this server.
+2016-10-15T23:45:08.809096332 555.232405s info: Table d6e3ffb7-7c02-44e9-bdd7-3977b584b35b: This server is Raft leader for term 1. Latest log index is 0.
+2016-10-16T16:04:12.453527715 59298.876836s info: Table 563169f2-e6f8-40db-9a30-606b5346da38: Starting a new Raft election for term 1.
+2016-10-16T16:04:12.453739294 59298.877048s info: Table 563169f2-e6f8-40db-9a30-606b5346da38: Added replica on this server.
+2016-10-16T16:04:12.455717817 59298.879026s info: Table 563169f2-e6f8-40db-9a30-606b5346da38: This server is Raft leader for term 1. Latest log index is 0.
