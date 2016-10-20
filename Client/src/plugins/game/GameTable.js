@@ -38,8 +38,6 @@ class GameTable extends Component {
         // but it seems so wrong. We can do event handling but that seems tedious as we would need handlers for each
         // field I would think.
 
-        console.log(this.refs.gamertag);
-
         let gameTime = new Date().toLocaleTimeString();
 
         let gameDetails = {
@@ -54,29 +52,31 @@ class GameTable extends Component {
         this.props.addMatch(gameDetails);
         this.props.getMatches();
         this.toggleCreateGame();
-        console.log('Game created.');
     };
 
     getScheduledGames () {
         var availableGames = this.props.game.matches;
         var rows = [];
-        rows = availableGames.map(function(gameInfo, key) {
-            return (
-                <GameRow
-                    key={key}
-                    gamertag={gameInfo.gamertag}
-                    time={gameInfo.time}
-                    game={gameInfo.game}
-                    gameType={gameInfo.gameType}
-                    playerCount={gameInfo.playerCount}
-                />
-            );
-        });
+        if (typeof availableGames !== 'undefined') {
+            rows = availableGames.map(function(gameInfo, key) {
+                return (
+                    <GameRow
+                        key={key}
+                        gamertag={gameInfo.gamertag}
+                        time={gameInfo.time}
+                        game={gameInfo.game}
+                        gameType={gameInfo.gameType}
+                        playerCount={gameInfo.playerCount}
+                    />
+                );
+            });
+        }
 
         return rows;
     }
 
     buildAddGamePanel = () => {
+        console.log('Maches: ', this.props.game.matches);
         return (
             <Modal show={this.state.createGame} onHide={this.toggleCreateGame}>
                 <Modal.Header closeButton>

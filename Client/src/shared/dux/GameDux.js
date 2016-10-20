@@ -8,38 +8,62 @@ var restUtils = require('superagent');
 
 const matches = [];
 const expressPort = 3001;
-const expressServer = 'localhost:' + expressPort;
+const expressServer = 'http://localhost:' + expressPort;
 
 const getMatchData = () => {
-    return JSON.parse(JSON.stringify(matches));
+    var data = [];
+    restUtils
+        .get(expressServer + '/games')
+        .end(function(err, res) {
+            if (!err) {
+                data = JSON.parse(res.text);
+            } else {
+                console.log(err);
+            }
+            console.log('data', data);
+            return data;
+        });
 }
 
 const insertMatch = (matchPayload) => {
     restUtils
         .post(expressServer + '/games')
-        .set(matchPayload)
+        .send(matchPayload)
         .end(function(err, res) {
             if (!err) {
-                return JSON.parse(res.text);
+            } else {
+                console.log(err);
             }
         });
 }
 
 export const getMatches = () => {
+    
+    var data = [];
+    restUtils
+        .get(expressServer + '/games')
+        .end(function(err, res) {
+            if (!err) {
+                data = JSON.parse(res.text);
+            } else {
+                console.log(err);
+            }
+            console.log('data', data);
+            return data;
+        });
     return {
         type: 'GET_MATCHES',
         data: getMatchData(),
-        completed: false,
-    }
+        completed: true,
+    };
 };
 
 export const addMatch = (matchPayload) => {
     return {
         type: 'ADD_MATCH',
         data: insertMatch(matchPayload),
-        //matchPayload,
         completed: false,
-    }
+    };
 };
 
 export const INITIAL_STORE = {
@@ -55,11 +79,12 @@ export const matchParser = (matchPayload) => {
 export const reducer = (state = INITIAL_STORE, action) => {
     switch (action.type) {
         case 'GET_MATCHES': {
+            console.log('Action data: ', action.data);
             return { ...state, matches: action.data, completed:true};
         }
         case 'ADD_MATCH': {
             let newMatches = matchParser(action.matchPayload);
-            return { ...state, matches: newMatches, completed:true};
+            return { ...state, matches: action.data, completed:true};
         }
         default:
             return state;
