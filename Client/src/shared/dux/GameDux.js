@@ -1,4 +1,4 @@
-import { registerReducer } from '../utils/DuxUtils';
+import { registerReducer, defaultAsyncHandler } from '../utils/DuxUtils';
 var restUtils = require('superagent');
 
 // General purpose store.
@@ -38,24 +38,16 @@ const insertMatch = (matchPayload) => {
 }
 
 export const getMatches = () => {
-    
-    var data = [];
-    restUtils
-        .get(expressServer + '/games')
-        .end(function(err, res) {
-            if (!err) {
-                data = JSON.parse(res.text);
-            } else {
-                console.log(err);
-            }
-            console.log('data', data);
-            return data;
-        });
-    return {
-        type: 'GET_MATCHES',
-        data: getMatchData(),
-        completed: true,
-    };
+	return (dispatch) => {
+		dispatch({type: 'GET_MATCHES'})
+		restUtils.get(expressServer + '/games').end(
+				defaultAsyncHandler(
+					dispatch,
+					'GET_MATCHES_FAIL',
+					'GET_MATCHES_OK'
+				)
+		);
+	}
 };
 
 export const addMatch = (matchPayload) => {
@@ -77,14 +69,23 @@ export const matchParser = (matchPayload) => {
 };
 
 export const reducer = (state = INITIAL_STORE, action) => {
+
     switch (action.type) {
         case 'GET_MATCHES': {
-            console.log('Action data: ', action.data);
-            return { ...state, matches: action.data, completed:true};
+            return { ...state, completed:false};
+        }
+        case 'GET_MATCHES_OK': {
+            console.log('Action data: ', action);
+            return { ...state, error: false, status: action.data.status, matches: action.data.body, completed:true};
+        }
+        case 'GET_MATCHES_FAIL': {
+            // TODO store error state
+            console.log('Action data: ', action);
+            return { ...state, error: true, status: action.data.status, completed:false};
         }
         case 'ADD_MATCH': {
             let newMatches = matchParser(action.matchPayload);
-            return { ...state, matches: action.data, completed:true};
+            return { ...state, error: false, completed:true};
         }
         default:
             return state;
